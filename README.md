@@ -26,10 +26,3 @@ source ./.venv/bin/activate
 ---
 All functions are tested through Postman. Testing logic is documented after each major implementation. 
 
-  ## V0.1
-
-  **Main task:** create main project skeleton while employing MongoDB.
-  **Sub Tasks:**
-  * Implement seed data for function testing.
-  * Implement basic aggregation functions used for filtering.
-  * Create user login with tokens that would allow to restrict some functions. 
