@@ -12,7 +12,7 @@ JWT_KEY = os.getenv('JWT_SECRET_KEY', 'labai-slaptas-raktas-1')
 app = Flask(__name__)
 CORS(app)
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://justinaseil_db_user:Labas@cluster0.kkuyxfb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URI = os.getenv("MONGO_URI", "mongo_conection_key (write)")
 client = MongoClient(MONGO_URI)
 db = client["mini_netflix"]
 
