@@ -31,16 +31,32 @@ All functions are tested through Postman. Testing logic is documented after each
  **User registration & login**:  
     - Users are registered with unique IDs, and their data is stored in MongoDB.  
     - Login functions use JWT tokens for authentication and session management.
+    
 **Movie management**:  
     - Includes listing movies, filtering by genre or release year, and sorting by release year.  
     - Users can access and filter movies.
+    
 **Reviews & ratings**:  
-    - Users can leave reviews and ratings for movies, which requires an active user session (token).  
+    - Users can leave reviews and ratings for movies, which requires an active user session (token).
+    
 **Subscription management**:  
     - Users can change their subscription plan and view their active subscription.  
     - Subscription validity is automatically set based on the selected plan duration.
+    
 **Analytics**:  
     - "Top Movies": identifies the highest-rated movies (average rating, review count).  
     - "Top Reviewers": identifies the most active users by review count.  
     - Both functions use MongoDB aggregation queries.
+
+# V0.2
+
+**Redis caching layer**:
+   - Frequently accessed endpoints (movie list, filters, sorting) were cached in Redis to reduce MongoDB load.
+   - Cached responses have TTL to ensure freshness.
+
+**Analytics optimization**:
+   - “Top Movies” and “Top Reviewers” results are cached in Redis, avoiding repeated heavy MongoDB aggregations.
+
+**Review updates**:
+   - When a user posts a review, Redis clears affected cache keys (movie-specific data + analytics) to keep results consistent.
 
