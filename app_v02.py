@@ -26,7 +26,7 @@ redis_client = redis.Redis(
     decode_responses=True
 )
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://justinaseil_db_user:Labas@cluster0.kkuyxfb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URI = os.getenv("MONGO_URI", "mongo_conncet_key (write)")
 client = MongoClient(MONGO_URI)
 db = client["mini_netflix"]
 
