@@ -60,3 +60,17 @@ All functions are tested through Postman. Testing logic is documented after each
 **Review updates**:
    * When a user posts a review, Redis clears affected cache keys (movie-specific data + analytics) to keep results consistent.
 
+# V0.3
+
+**Chat system (Cassandra)**:
+  * Users can send and retrieve chat messages stored in Cassandra.
+  * Messages are partitioned by chat ID and ordered by timestamp for efficient high-write performance.
+  * ChatBot using Hugging Face API was implemented.
+
+**Audit logging (Cassandra)**:
+  * All key system actions (logins, subscription changes, reviews) are stored in Cassandra audit tables.
+
+**Two audit models implemented**:
+  * By user ID (query user history)
+  * By event date (query system events by day)
+
